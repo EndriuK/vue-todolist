@@ -8,6 +8,7 @@ createApp({
         { text: "Portare il cane a spasso", done: true },
         { text: "Andare a lavare la macchina", done: false },
       ],
+      newTodoText: "",
     };
   },
   methods: {
@@ -16,6 +17,12 @@ createApp({
     },
     removeTodo(index) {
       this.todos.splice(index, 1);
+    },
+    addTodo() {
+      if (this.newTodoText.trim() !== "") {
+        this.todos.push({ text: this.newTodoText, done: false });
+        this.newTodoText = "";
+      }
     },
   },
 }).mount("#app");
