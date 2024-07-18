@@ -14,5 +14,8 @@ createApp({
     toggleDone(index) {
       this.todos[index].done = !this.todos[index].done;
     },
+    removeTodo(index) {
+      this.todos.splice(index, 1);
+    },
   },
 }).mount("#app");

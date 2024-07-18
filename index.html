@@ -18,7 +18,7 @@
             <li v-for="(todo, index) in todos" :key="index"
                 :class="['list-group-item d-flex justify-content-between align-items-center', { 'text-decoration-line-through': todo.done }]">
                 <span @click="toggleDone(index)" v-text="todo.text"></span>
-                <button class="btn btn-danger btn-sm">x</button>
+                <button @click="removeTodo(index)" class="btn btn-danger btn-sm">x</button>
             </li>
         </ul>
 
